@@ -21,7 +21,7 @@ Vue.createApp({
     methods: {
         Login() {
             axios.post('/api/login', `email=${this.email}&password=${this.password}`, { headers: { 'content-type': 'application/x-www-form-urlencoded' } })
-                .then(response => window.location.href = "http://localhost:8080/web/accounts.html")
+                .then(response => window.location.href = "/web/accounts.html")
         },
 
         signUp() {

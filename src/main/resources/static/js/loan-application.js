@@ -44,13 +44,13 @@ const app = Vue.createApp({
         signOut() {
             axios.post('/api/logout')
                 .then(response => console.log('signed out!!!'))
-                .then(response => window.location.href = "http://localhost:8080/web/index.html")
+                .then(response => window.location.href = "/web/index.html")
         },
 
         createLoan() {
             axios.post('/api/loans', { id: this.loanSeleccionado.id, amount: this.amount, payments: this.payments, accountNumber: this.accountNumber })
                 .then(response => console.log("create"))
-                .then(response => window.location.href = "http://localhost:8080/web/accounts.html")
+                .then(response => window.location.href = "/web/accounts.html")
         }
 
 

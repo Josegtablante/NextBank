@@ -37,7 +37,7 @@ Vue.createApp({
     methods: {
 
         crearTarjetas(){
-            axios.post('http://localhost:8080/api/clients/current/cards')
+            axios.post('/api/clients/current/cards')
             .then(response => { console.log("Tarjeta Creada") })
             // .then(response => {if (this.crearCuenta.length >= 3) {window.alert("no puedes crear mas de tres cuentas")}})
             // .then(response => { location.reload() }) //como hacer para limitar la cuenta a solo 3 . pensar
