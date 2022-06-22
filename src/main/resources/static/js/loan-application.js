@@ -21,7 +21,7 @@ const app = Vue.createApp({
 
 
     created() {
-        axios.get('http://localhost:8080/api/clients/current/') //clientess registrados
+        axios.get('/api/clients/current/') //clientess registrados
             .then(data => {
                 this.cliente = data.data //este muestra toda la data o Json
                 this.cuentas = this.cliente.accounts
@@ -30,7 +30,7 @@ const app = Vue.createApp({
                 // console.log(this.prestamos)
 
             })
-        axios.get('http://localhost:8080/api/loan')
+        axios.get('/api/loan')
             .then(data => {
                 this.loans = data.data //este muestra toda la data o Json
                 this.prestamos = this.loans

@@ -28,7 +28,7 @@ const app = Vue.createApp({
 
 
     created() {
-        axios.get('http://localhost:8080/api/clients/current') //clientess registrados
+        axios.get('/api/clients/current') //clientess registrados
             .then(data => {
                 this.cliente = data.data //este muestra toda la data o Json
                 this.cuentas = this.cliente.accounts
@@ -54,7 +54,7 @@ const app = Vue.createApp({
 
 
         crearCuenta() {
-            axios.post('http://localhost:8080/api/clients/current/accounts')
+            axios.post('/api/clients/current/accounts')
                 .then(response => { console.log("registrado") })
                 .then(response => { if (this.crearCuenta.length >= 3) { window.alert("no puedes crear mas de tres cuentas") } })
                 .then(response => { location.reload() }) //como hacer para limitar la cuenta a solo 3 . pensar

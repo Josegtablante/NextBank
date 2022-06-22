@@ -21,7 +21,7 @@ Vue.createApp({
 
 
   created() {
-    axios.get(`http://localhost:8080/rest/clients`)
+    axios.get("/rest/clients")
       .then(data => {
         this.loadData = data.data._embedded.cliente
         this.Json = data.data

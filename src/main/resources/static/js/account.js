@@ -21,7 +21,7 @@ Vue.createApp({
         const urlParams = new URLSearchParams(window.location.search);
         const id = urlParams.get('id');
 
-        axios.get("http://localhost:8080/api/accounts/" + id)
+        axios.get("/api/accounts/" + id)
             .then(data => {
                 this.cliente = data.data //este muestra toda la data o Json
                 this.cuentas = this.data.accounts //Entra en Json y muestra accounts
