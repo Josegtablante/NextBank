@@ -33,7 +33,7 @@ Vue.createApp({
 
   methods: {
     enviarCliente() {
-      axios.post(`http://localhost:8080/rest/clients`, {
+      axios.post(`/rest/clients`, {
         firstName: this.firstName,
         lastName: this.lastName,
         email: this.email,
