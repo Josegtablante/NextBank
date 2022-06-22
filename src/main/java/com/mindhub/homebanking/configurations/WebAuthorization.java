@@ -21,6 +21,8 @@ public class WebAuthorization extends WebSecurityConfigurerAdapter {
 
         http.authorizeRequests()
 
+                .antMatchers(HttpMethod.POST,"/api/clients").permitAll()
+
                 .antMatchers("/h2-console/**").hasAuthority("ADMIN")
 
                 .antMatchers("/web/index.html","/js/**","web/index.js","css/**").permitAll()
@@ -39,10 +41,7 @@ public class WebAuthorization extends WebSecurityConfigurerAdapter {
 
                 .antMatchers(HttpMethod.POST,"/api/clients/current/accounts","/api/clients/current/cards").hasAuthority("CLIENT")
 
-                .antMatchers(HttpMethod.GET,"/api/clients/current/accounts").hasAuthority("CLIENT")
-
-                .antMatchers(HttpMethod.POST,"/api/clients").permitAll();
-
+                .antMatchers(HttpMethod.GET,"/api/clients/current/accounts").hasAuthority("CLIENT");
 
         http.formLogin()
 
