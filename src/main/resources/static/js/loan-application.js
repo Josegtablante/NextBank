@@ -6,7 +6,6 @@ const app = Vue.createApp({
             cuentas: [],
             prestamos: [],
 
-
             accountNumber: "",
             payments: 0.00,
             amount: 0.00,
@@ -18,29 +17,21 @@ const app = Vue.createApp({
         };
     },
 
-
-
     created() {
         axios.get('/api/clients/current/') //clientess registrados
             .then(data => {
                 this.cliente = data.data //este muestra toda la data o Json
                 this.cuentas = this.cliente.accounts
                 this.prestamos = this.cliente.loans
-                // console.log(this.cliente)
-                // console.log(this.prestamos)
-
             })
         axios.get('/api/loan')
             .then(data => {
-                this.loans = data.data //este muestra toda la data o Json
+                this.loans = data.data
                 this.prestamos = this.loans
-          //      console.log(this.prestamos)
-
             })
     },
 
     methods: {
-
         signOut() {
             axios.post('/api/logout')
                 .then(response => console.log('signed out!!!'))
@@ -52,17 +43,9 @@ const app = Vue.createApp({
                 .then(response => console.log("create"))
                 .then(response => window.location.href = "/web/accounts.html")
         }
-
-
-
-
     },
 
     computed: {
-
     },
-
-
-
 
 }).mount('#app');
