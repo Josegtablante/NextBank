@@ -7,25 +7,16 @@ Vue.createApp({
             tarjetas: [],
             prestamos: [],
             transacciones: [].sort(function(a, b){return b - a}),
-
             cardHolder: [],
-
             type: "",
             cardColor: "",
-
             cantidad: '',
             name: '',
-
             description: "",
             originAccount: "",
             destinationAccount: "",
-
-
         }
-
     },
-
-
 
     created() {
         axios.get("/api/clients/current")
@@ -35,10 +26,6 @@ Vue.createApp({
                 this.prestamos = this.cliente.loans
                 this.tarjetas = this.cliente.cards
                 this.transacciones = this.cuentas[0].transactions //preguntar como recorrer cuentas para mostrar las transacciones
-                // console.log(this.cliente)
-                // console.log(this.cuentas)
-                // console.log(this.cuentas)
-                // console.log(this.transacciones)
             })
     },
 
@@ -60,25 +47,12 @@ Vue.createApp({
                 .then(response => { window.location.reload() })
         },
 
-
-
     },
-
-
-
-
-
-
 
     computed: {
         // comprobar() {
         //     return this.cantidad.length > 2 ? true : false
         // }
-
     },
-
-
-
-
 
 }).mount('#app');
