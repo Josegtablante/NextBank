@@ -10,3 +10,22 @@ realiando peticiones de tipo GET y POST mediante Axios
 
 
 https://minhubbank.herokuapp.com/web/index.html
+
+# para instalar 
+Clona o descarga el repositorio.
+
+# inciar proyecto
+- descomprime el proyecto.
+- haz click sobre el proyecto y abrelo con el IDE de tu preferencia.
+- ingresa al archivo HomebankingApplication.java.
+- Run HomebankingApplication o preciona bootRun dentro de aplication en Gradle.
+- ingresa a http://localhost:8080/web/index.html
+
+
+# credenciales 
+```
+"firstName" : Melba,
+"lastName" : Mora,
+"password" : asd,
+"email" : melbamora@gmail.com,
+```
